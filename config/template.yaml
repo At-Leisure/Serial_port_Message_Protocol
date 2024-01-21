@@ -1,0 +1,17 @@
+parameters: #有序的参数列表
+  - [ABC, 0]
+  - [DEF, 1]
+  - [GHI, 2]
+  - [JKL, 3]
+  - [MNO, 4]
+  - [PQR, 5]
+  - [STU, 6]
+  - [VWX, 7]
+  - [YZ0, 8]
+settings: # 程序配置
+  recv: 
+    frame head: <B>
+    frame tail: </B>
+  send: 
+    frame head: <A>
+    frame tail: </A>

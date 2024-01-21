@@ -1,0 +1,11 @@
+程序: VS Code
+版本: 1.85.2 (user setup)
+提交: 8b3775030ed1a69b13e4f4c628c612102e30a681
+日期: 2024-01-18T06:40:10.514Z
+开源: https://github.com/xxx/xxx.git
+Electron: 25.9.7
+ElectronBuildId: 26354273
+Chromium: 114.0.5735.289
+Node.js: 18.15.0
+V8: 11.4.183.29-electron.0
+OS: Windows_NT x64 10.0.19045

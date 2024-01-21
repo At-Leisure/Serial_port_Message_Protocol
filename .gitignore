@@ -1,0 +1,8 @@
+__pycache__
+temp/*
+assets/ico/*
+build/*
+!build/help.txt
+config/*
+!config/template.yaml
+!config/help.txt
