@@ -1,6 +1,5 @@
 __pycache__
-temp
-assets/ico/*
+temp/*
 build/*
 !build/help.txt
 data/*
