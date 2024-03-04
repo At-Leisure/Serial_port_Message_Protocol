@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtCore import *
 import string
 
 
@@ -8,8 +8,8 @@ class Turntable(QWidget):
 
     signal = pyqtSignal(int)
 
-    def __init__(self, names: tuple[str] = None, n_items: str = 7, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, parent=None, names: tuple[str] = None, n_items: str = 7, *args, **kwargs):
+        super().__init__(parent, *args, **kwargs)
         names = names if not names is None else [string.ascii_uppercase[i:i+3] for i in range(0, 25, 3)]
         self.names = names
         self.n_items = n_items
@@ -26,10 +26,10 @@ class Turntable(QWidget):
             font = QFont()
             if (i+1)*2 - self.n_items == 1:
                 font.setBold(True)
-                font.setPointSize(12)
+                font.setPointSize(14)
                 font.setFamily('Consolas')
             else:
-                font.setPointSize(12 - 2 - abs(n_items//2-i))
+                font.setPointSize(10 - abs(n_items//2-i))
             l.setFont(font)
 
         self.setLayout(layout)

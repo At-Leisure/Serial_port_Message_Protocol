@@ -1,7 +1,7 @@
-from PyQt5 import uic
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt6 import uic
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtCore import *
 import string
 import yaml
 from collections import OrderedDict
@@ -77,7 +77,7 @@ class NewconfigWindow(QDialog):
                 try:
                     v = eval(v)
                 except:
-                    QMessageBox.critical(self.parent(), '语法错误', "值(value)只能是int或float类型！", QMessageBox.Yes)
+                    QMessageBox.critical(self.parent(), '语法错误', "值(value)只能是int或float类型！", QMessageBox.StandardButton.Yes)
                     continue
                 kv.append([k, v])
         return kv
@@ -87,11 +87,12 @@ class NewconfigWindow(QDialog):
         config.parameters = self.params
         config.show()
         if self.path is None:
-            QMessageBox.critical(self.parent(), '路径错误', "进行保存时对应路径不存在！", QMessageBox.Yes)
+            QMessageBox.critical(self.parent(), '路径错误', "进行保存时对应路径不存在！", QMessageBox.StandardButton.Yes)
             self.pathlabel.setText('<p style="color: red;">path: 【警告】先选择路径才能保存配置！</p>')
         else:
             config.dump(self.path)
-        self.close()
+            QMessageBox.information(self.parent(), '创建成功', f'新文件已保存到"{self.path}"路径下。', QMessageBox.StandardButton.Yes)
+            self.close()
 
 
 if __name__ == '__main__':

@@ -1,0 +1,7 @@
+C:\Users\newz\Desktop\Projects\Fantasy-Parameter_Turntable-参数轮盘\data\test.yaml
+C:\Users\newz\Desktop\Projects\Fantasy-Parameter_Turntable-参数轮盘\data\dccs.yaml
+C:\Users\newz\Desktop\Projects\Fantasy-Parameter_Turntable-参数轮盘\data\dccs.yaml
+./data/test.yaml
+C:\Users\newz\Desktop\Projects\Fantasy-Parameter_Turntable-参数轮盘\data\dccs1.yaml
+./data/test.yaml
+C:\Users\newz\Desktop\Projects\Fantasy-Parameter_Turntable-参数轮盘\data\dccs.yaml

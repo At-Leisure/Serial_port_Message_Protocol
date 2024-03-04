@@ -1,0 +1,51 @@
+file info:
+  title: one.yaml for MCU
+  description: 测试案例文件的详细描述
+
+project info: 
+  version: 2.0.1
+
+initial:
+  includes:
+  - headfile.h
+  coding: clock_init(SYSTEM_CLOCK_56M); board_init(); wireless_uart_init();
+
+delay_ms: delay_ms
+
+parameter:
+  infos: 
+  - title: 变量1
+    description: 用于测试的变量1
+    extern: float value_1; #如何进行外部调用
+    define: value_1 #C代码中的全局引用
+    alias: ABC  #双端统一使用的别称
+  - title: 变量2
+    description: 用于测试的变量2
+    extern: float value_2;
+    define: value_2
+    alias: DEF
+    
+  values:
+  - title: 参数组1
+    description: None
+    details:
+    - 1.1
+    - 1.2
+  - title: 参数组2
+    description: None
+    details:
+    - 2.1
+    - 2.2
+
+shortcut:
+- title: 设置参数值
+  alias: SetParameterValue
+  define: void SetParameterValue(int param=0, float value=0);
+
+setting:
+  recv:
+    frame head: '['
+    frame tail: ']'
+  send:
+    frame head: '<'
+    frame tail: '>'

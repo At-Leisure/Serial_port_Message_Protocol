@@ -1,0 +1,1 @@
+.\envs\graphic\python.exe .\main.py  # firstly start Ê×´ÎÆô¶¯

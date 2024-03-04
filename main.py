@@ -1,29 +1,26 @@
+""" 
+zyf.console 提供数据交互 - 后端
+zyf.window 提供可视界面 - 前端
+"""
+
 import os
 import sys
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+import pathlib
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtCore import *
 from zyf.window.main_window import MainWindow
-from zyf.window.setting_window import SettingWindow
-from zyf.window.newconfig import NewconfigWindow
-from zyf.assist.config_struct import Config
-from zyf.window.code_preview import CodeWindow
+from zyf.console import Console,Config
 
 
 if __name__ == '__main__':
+    root_path = pathlib.Path('./')
+    with open(root_path/'start.bat','w',encoding='gbk') as f:
+        f.write(f'{sys.executable} {(root_path/"main.py").absolute()} #非首次启动')
     app = QApplication(sys.argv)
-    config = Config('./config/template.yaml')
-    win = MainWindow(config)
-    setwin = SettingWindow(config, win)
-    codewin = CodeWindow(config, win)
-    filewin = NewconfigWindow(win)
-
-    win.action_2.triggered.connect(filewin.exec)  # 模态窗口win.exec()，非模态窗口win.show()
-    win.action_3.triggered.connect(setwin.exec)
-    win.action_8.triggered.connect(codewin.exec)
-    win.action_6.triggered.connect(config.show)
-    win.pushButton_4.clicked.connect(setwin.exec)
-    setwin.apply_signal.connect(win.Update_Settings)
+    console = Console()
+    console.load_from_history(-1,from_path=True) # 默认打开上次的文件
+    win = MainWindow(console)
     win.show()
     app.exec()
     sys.exit()

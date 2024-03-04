@@ -1,0 +1,30 @@
+file info:
+  title: 案例文件的标题
+  description: 案例文件的详细描述
+
+initial:
+  includes:
+  - 头文件1.h
+  - 头文件2.h
+  coding: 初始化代码
+
+parameter:
+  infos: 
+  - title: 变量的标题
+    description: 变量的详细描述
+    extern: float var_mno;
+    define: var_mno
+    alias: 化名
+  values:
+  - title: 参数组1
+    description: None
+    details:
+    - 1.1
+
+# setting:
+#   recv:
+#     frame head: '['
+#     frame tail: ']'
+#   send:
+#     frame head: '<'
+#     frame tail: '>'

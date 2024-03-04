@@ -1,0 +1,13 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "pyqt6-designer",
+            "type": "process",
+            "command": "C:/Users/newz/.conda/envs/graphic/Lib/site-packages/qt6_applications/Qt/bin/designer.exe",
+            "problemMatcher": []
+        }
+    ]
+}

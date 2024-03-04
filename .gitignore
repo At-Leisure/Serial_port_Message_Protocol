@@ -1,8 +1,11 @@
 __pycache__
-temp/*
+temp
 assets/ico/*
 build/*
 !build/help.txt
-config/*
-!config/template.yaml
-!config/help.txt
+data/*
+!data/test.yaml
+!data/help.txt
+test/zyf
+envs
+start.bat
