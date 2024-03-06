@@ -181,6 +181,7 @@ class Console:
             param_index = [a['alias'] for a in self.data['parameter', 'infos']].index(alias)
             ic(param_index)
             self.data['parameter', 'values', self.group_index, 'details', param_index] = v
+            self.data.dump()
         return order, exception
 
     @property
@@ -240,7 +241,7 @@ int main()
     
     while(1)
     {{
-        identify_order();
+        manage_serial_port(); // 接管串口收发
         {self.data['delay_ms']}(200);
     }}
     return 0;
@@ -270,8 +271,8 @@ int main()
         }}                                            \
     }}
 
-#define SERIAL_READBUFF_SIZE 10 // 串口读取缓冲
-#define SERIAL_SENDBUFF_SIZE 50 // 串口输出缓冲
+#define SERIAL_READBUFF_SIZE 100 // 串口读取缓冲
+#define SERIAL_SENDBUFF_SIZE 100 // 串口输出缓冲
 
 // @brief 串口发送字符串
 // @param string_ 要发送的字符串
@@ -406,9 +407,9 @@ enum shortcut process_information(const char *uart_buff, const int uart_len)
     if (buff_len + uart_len >= 100)
     {{
         serial_putstr("[warnning] buff was burst!");
-        serial_putstr((const u8 *)match_buff);
+        serial_putstr((const uint8 *)match_buff);
         serial_putstr(" | ");
-        serial_putstr((const u8 *)uart_buff);
+        serial_putstr((const uint8 *)uart_buff);
     }}
 
     // 拼接字符串
@@ -451,7 +452,7 @@ enum shortcut process_information(const char *uart_buff, const int uart_len)
                 break;''' for sc,sfn,spts in zip(self.data['shortcut'],shortcut_function_name,shortcut_param_type))}
                 
             default: // 匹配失败
-                debug_println("match None");
+                debug_println("match None %c",' ');
                 serial_putstr("#");
                 ot = SC_None;
                 break;
